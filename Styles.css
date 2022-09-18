@@ -1,0 +1,173 @@
+/* O asterisco '*' é um seletor universal no CSS.
+Aqui abaixo estamos removendo todos espaços que 
+o navegador poe automaticamente em nossa pagina*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Isto serve para tirar os
+pontos que estavam na page*/
+ul {
+    list-style: none;
+}
+
+/* Propriedades do Backgroud */
+body {
+    background-image: url(./assets/bg.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+/*Fonte usada nos textos*/
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+/*Propriedades da foto de perfil*/
+header {
+    padding: 32px;
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, violet 0%, #3ded97 60%, purple 100%);
+    
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+    animation: fromtop .7s 1s backwards;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/*Propriedades da tela*/
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: auto;
+
+    display: grid;
+    gap: 24px;
+}
+
+/*Propriedades da borda do background*/
+section {
+    color: white;
+    background-image: linear-gradient(90deg, violet 0%, #3ded97 60%, purple 100%);
+    padding-top: 4px;
+    border-radius: 8px;
+}
+
+/*Propriedades do backgroud
+quem abrange as listas*/
+section div {
+    background-color: #2A2634;
+    border-radius: 8px;
+    padding: 32px;
+    padding-top: 24px;
+}
+
+/*Espaço entre as letras dos Títulos*/
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+/*Fonte e cor dos parágrafos*/
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/*Espaço entre as imagens
+da lista de jogos*/
+section ul li{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-radius: 16px;
+
+    margin-top: auto;
+}
+
+/*Ao passar a seta por cima
+as listas vão se sobressair */
+section ul li{
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+/*Propriedades das imagens
+da lista de jogos*/
+.games-list img{
+    width: 90px;
+    border-radius: 8px;
+}
+
+/*Propriedades das imagens
+dos canais de streamers*/
+.stream-chanel img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443e54;
+}
+
+main section {
+    animation: frombottom .7s;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: 4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: 7s;
+}
+
+/*Animação da foto*/
+@keyframes fromtop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Animação das listas de jogos e canais*/
+@keyframes frombottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
